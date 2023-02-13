@@ -4,9 +4,11 @@ const pool = require("../modules/pool");
 
 router.get("/", (req, res) => {
   // Add query to get all genres
+  const query = `SELECT * FROM "genres" ORDER BY "name" ASC`;
   pool
     .query(query)
     .then((result) => {
+      console.log(result);
       res.send(result.rows);
     })
     .catch((err) => {
