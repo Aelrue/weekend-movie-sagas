@@ -19,5 +19,5 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 [] Route for details page in App
 [] Route for add movie page in App
 [] Back To List button on details page
-[ ] Comment the code
-[ ] Update README to include a description of the project in own words
+[] Comment the code
+[] Update README to include a description of the project in own words
