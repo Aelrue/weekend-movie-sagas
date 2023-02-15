@@ -6,12 +6,11 @@ import "./DetailsList.css";
 function DetailsList() {
   const dispatch = useDispatch();
   const history = useHistory();
-  // const genres = useSelector((store) => store.genres);
-  const movieId = useSelector((store) => store.movieId);
+  const { id } = useParams();
   const movie = useSelector((store) => store.movieDetails);
 
   useEffect(() => {
-    dispatch({ type: "FETCH_MOVIE_BY_ID", payload: movieId });
+    dispatch({ type: "FETCH_MOVIE_BY_ID", payload: { id } });
   }, []);
 
   // GET genres by ID
