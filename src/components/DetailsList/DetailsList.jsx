@@ -23,14 +23,14 @@ function DetailsList() {
 
   return (
     <>
-      <h1>{movie[0].title}</h1>
+      <h1>{movie.title}</h1>
       <div>
-        <img src={movie[0].poster} />
+        <img src={movie.poster} />
       </div>
       <div>
-        <p>{movie[0].description}</p>
+        <p>{movie.description}</p>
       </div>
-      <button onClicke={backClick}>Back to Movies</button>
+      <button onClick={backClick}>Back to Movies</button>
     </>
   );
 }
