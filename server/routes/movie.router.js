@@ -1,5 +1,4 @@
 const express = require("express");
-const { compose } = require("redux");
 const router = express.Router();
 const pool = require("../modules/pool");
 
@@ -21,16 +20,21 @@ router.get("/", (req, res) => {
 router.get("/:id", (req, res) => {
   console.log("in id get", req.params.id);
   const movieId = req.params.id;
+  const query = `SELECT * FROM movies WHERE id = $1`;
   pool
-    .query(movieId)
+    .query(query, [movieId])
     .then((result) => {
-      res.send(result.rows);
+      console.log(result.rows);
+      res.send(result.rows[0]);
     })
     .catch((err) => {
       console.log("ERROR: Get movie", err);
       res.sendStatus(500);
     });
 });
+
+// SELECT "movies".title, "movies".poster, "movies".description FROM "movies_genres"
+// JOIN movies_
 
 router.post("/", (req, res) => {
   console.log(req.body);

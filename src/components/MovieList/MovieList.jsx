@@ -12,15 +12,15 @@ function MovieList() {
     dispatch({ type: "FETCH_MOVIES" });
   }, []);
 
-  // const clickToDetails = (movieId) => {
-  //   console.log("clickToDetails clicked");
-  //   dispatch({
-  //     type: "SET_ID",
-  //     payload: movieId,
-  //   });
-  //   console.log("MOVIE ID:", movieId);
-  //   history.push("/details");
-  // };
+  const clickToDetails = (movieId) => {
+    console.log("clickToDetails clicked");
+    dispatch({
+      type: "SET_ID",
+      payload: movieId,
+    });
+    console.log("MOVIE ID:", movieId);
+    history.push(`/movie/${movieId}`);
+  };
 
   return (
     <main>
@@ -33,7 +33,7 @@ function MovieList() {
               <img
                 src={movie.poster}
                 alt={movie.title}
-                onClick={() => history.push(`/movie/${movie.id}`)}
+                onClick={() => clickToDetails(movie.id)}
               />
             </div>
           );

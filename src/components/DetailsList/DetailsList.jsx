@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 import "./DetailsList.css";
@@ -9,16 +9,11 @@ function DetailsList() {
   const { id } = useParams();
   const movie = useSelector((store) => store.movieDetails);
 
+  // get details about exact movie
   useEffect(() => {
+    console.log("Here's the ID", id);
     dispatch({ type: "FETCH_MOVIE_BY_ID", payload: { id } });
   }, []);
-
-  // GET genres by ID
-
-  const backClick = () => {
-    event.preventDefault();
-    history.push("/");
-  };
 
   return (
     <>
@@ -29,7 +24,7 @@ function DetailsList() {
       <div>
         <p>{movie.description}</p>
       </div>
-      <button onClick={backClick}>Back to Movies</button>
+      <button onClick={() => history.push("/")}>Back to Movies</button>
     </>
   );
 }
