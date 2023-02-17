@@ -34,5 +34,5 @@ Movie Sagas was built using HTML/CSS, Javascript, Axios, React, Redux, SQL, and 
 - [] Style home page
 - [] Style detail page
 - [] Remind myself I'm awesome
-- [] Update the README to include a description of the project in own words
+- [x] Update the README to include a description of the project in own words
 - [] Comment code

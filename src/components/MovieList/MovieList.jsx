@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { Box, Card, Container, Grid } from "@material-ui/core";
 import "./MovieList.css";
 
 function MovieList() {
@@ -24,7 +25,7 @@ function MovieList() {
 
   return (
     <main>
-      <h1>MovieList</h1>
+      <h1>Now Playing</h1>
       <section className="movies">
         {movies.map((movie) => {
           return (
