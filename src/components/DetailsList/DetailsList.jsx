@@ -11,7 +11,7 @@ function DetailsList() {
 
   // get details about exact movie
   useEffect(() => {
-    console.log("Here's the ID", id);
+    // console.log("Here's the ID", id);
     dispatch({ type: "FETCH_MOVIE_BY_ID", payload: { id } });
   }, []);
 
@@ -20,9 +20,9 @@ function DetailsList() {
       <h1>{movie.title}</h1>
       <div>
         <img src={movie.poster} />
-      </div>
-      <div>
+
         <p>{movie.description}</p>
+        <p>{movie.genre}</p>
       </div>
       <button onClick={() => history.push("/")}>Back to Movies</button>
     </>

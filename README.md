@@ -1,14 +1,12 @@
-# Project Name
-
-[Project Instructions](./INSTRUCTIONS.md), this line may be removed once you have updated the README.md
+# Weekend Movie Sagas
 
 ## Description
 
-Your project description goes here. What problem did you solve? How did you solve it?
+This is an application for browsing a movie database and retrieving detailed information for each movie selected. To do so, users can click on a movie's poster and be brought to a separate page that contains the movie's plot, actors, etc. Once finished, user's can click the back button to be brought back to the home page.
 
-Additional README details can be found [here](https://github.com/PrimeAcademy/readme-template/blob/master/README.md).
+Movie Sagas was built using HTML/CSS, Javascript, Axios, React, Redux, SQL, and Material UI. The app's framework and my knowledge was provided by Prime Digital Academy.
 
-### SET UP
+### CHECKLIST SET UP
 
 - [x] Make to do list
 - [x] Create a database named `saga_movies_weekend`
@@ -19,14 +17,14 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 
 ## DETAILS PAGE
 
-- [] When a movie poster is clicked, a user should be brought to the `/details` view for that movie
-  - [] Clicking movie poster should console log out movie id
-  - [] Store movie id to be used on another page
-  - [] Add details page to router
-  - [] Clicking movie poster should push user to `/details`
+- [x] When a movie poster is clicked, a user should be brought to the `/details` view for that movie
+  - [x] Clicking movie poster should console log out movie id
+  - [x] Store movie id to be used on another page
+  - [x] Add details page to router
+  - [x] Clicking movie poster should push user to `/details`
 - [] Render movie details including genres, title, description, and the image.
-  - [] Use Sagas and Redux to handle these requests and data
-- [] Add a 'Back to List' button which should bring the user back to the Home page
+  - [x] Use Sagas and Redux to handle these requests and data
+- [x] Add a 'Back to List' button which should bring the user back to the Home page
 
 > Hint : You can make a GET request for a specific movie. Remember `req.params` and `:id`?
 
@@ -35,6 +33,6 @@ Additional README details can be found [here](https://github.com/PrimeAcademy/re
 - [] Clean up unused or redunant code & console logs
 - [] Style home page
 - [] Style detail page
-- [] Remind myself Im awesome
-- [] Update the README to include a description of the project in your own words
-- [] Comment your code
+- [] Remind myself I'm awesome
+- [] Update the README to include a description of the project in own words
+- [] Comment code

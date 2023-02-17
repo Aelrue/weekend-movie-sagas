@@ -81,4 +81,12 @@ VALUES
 (14,1), (14,2), (14,4);   -- Toy Story
 
 --get all movie genres
-SELECT * FROM "genres" ORDER BY "name" ASC
+SELECT * FROM "genres" ORDER BY "name" 
+
+--Get genre info for full movie
+SELECT "movies".id, "movies".description, "movies".poster, "movies".title 
+ FROM "movies_genres" 
+    JOIN "movies" ON "movies_genres".movie_id = "movies".id
+    JOIN "genres" ON "movies_genres".genre_id = "genres".id
+    WHERE "movies".id = $1
+    GROUP BY "movies".id;

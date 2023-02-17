@@ -35,7 +35,7 @@ function* fetchOneMovie(action) {
   console.log("in fetchOneMovie", action.payload);
   try {
     const movie = yield axios.get(`/api/movie/${action.payload.id}`);
-    console.log("get by ID success:", movie.data);
+    console.log("get by ID success:");
     yield put({ type: "SET_DETAILS", payload: movie.data });
   } catch {
     console.log("get movie error:", error);
@@ -43,10 +43,11 @@ function* fetchOneMovie(action) {
 }
 
 function* fetchGenres(action) {
-  //get genres from DB
-  console.log("in fetchGenres");
+  // get genres from DB
+  console.log("in fetchGenres", action.payload);
   try {
-    const genres = yield axios.get("/api/genre");
+    let id = action.payload;
+    const genres = yield axios.get(`/api/genre/${id}`);
     yield put({ type: "SET_GENRES", payload: genres.data });
   } catch {
     console.log("get genres error", error);
@@ -67,7 +68,7 @@ const movies = (state = [], action) => {
 };
 
 // Used to store the movie genres
-const genres = (state = [], action) => {
+const genres = (state = {}, action) => {
   switch (action.type) {
     case "SET_GENRES":
       return action.payload;
@@ -88,7 +89,7 @@ const movieId = (state = 0, action) => {
 };
 
 // Used to store movie details retrieved from the server
-const movieDetails = (state = {}, action) => {
+const movieDetails = (state = [], action) => {
   switch (action.type) {
     case "SET_DETAILS":
       return action.payload;

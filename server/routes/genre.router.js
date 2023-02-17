@@ -2,8 +2,9 @@ const express = require("express");
 const router = express.Router();
 const pool = require("../modules/pool");
 
-router.get("/", (req, res) => {
+router.get("/:id", (req, res) => {
   // Add query to get all genres
+  console.log("in genre router", req.params.id);
   const query = `SELECT * FROM "genres" ORDER BY "name" ASC`;
   pool
     .query(query)
