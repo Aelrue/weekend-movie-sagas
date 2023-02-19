@@ -24,6 +24,15 @@ function DetailsList() {
         <p>{movie.description}</p>
         <p>{movie.genre}</p>
       </div>
+      {/* return(
+      <div>
+        {movie.map((genre) => {
+          {
+            genre.name;
+          }
+        })}
+        )
+      </div> */}
       <button onClick={() => history.push("/")}>Back to Movies</button>
     </>
   );
