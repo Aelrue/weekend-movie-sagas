@@ -8,17 +8,12 @@ function DetailsList() {
   const history = useHistory();
   const { id } = useParams();
   const movie = useSelector((store) => store.movieDetails);
-  const genre = useSelector((store) => store.genres);
 
   // get details about exact movie
   useEffect(() => {
     // console.log("Here's the ID", id);
     dispatch({ type: "FETCH_MOVIE_BY_ID", payload: { id } });
   }, []);
-
-  useEffect(() => {
-    dispatch({ type: "FETCH_GENRES", payload: genre.data });
-  });
 
   return (
     <>

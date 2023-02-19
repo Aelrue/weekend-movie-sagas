@@ -13,13 +13,27 @@ function MovieList() {
     dispatch({ type: "FETCH_MOVIES" });
   }, []);
 
+  // const clickToDetails = (movieId) => {
+  //   console.log("clickToDetails clicked");
+  //   dispatch({
+  //     type: "SET_ID",
+  //     payload: movieId,
+  //   });
+  //   console.log("MOVIE ID:", movieId);
+  //   history.push(`/movie/${movieId}`);
+  // };
+
   const clickToDetails = (movieId) => {
     console.log("clickToDetails clicked");
     dispatch({
       type: "SET_ID",
       payload: movieId,
     });
-    console.log("MOVIE ID:", movieId);
+    dispatch({
+      type: "FETCH_GENRES",
+      payload: movieId,
+    });
+    // console.log("MOVIE ID:", movieId);
     history.push(`/movie/${movieId}`);
   };
 
