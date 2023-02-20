@@ -46,9 +46,10 @@ function* fetchGenres(action) {
   // get genres from DB
   console.log("in fetchGenres", action.payload);
   try {
-    let id = action.payload;
-    const genres = yield axios.get(`/api/genre/${id}`);
+    const genres = yield axios.get(`/api/genre/${action.payload}`);
+
     yield put({ type: "SET_GENRES", payload: genres.data });
+    console.log("in fetch genres", genres.data);
   } catch {
     console.log("get genres error", error);
   }
