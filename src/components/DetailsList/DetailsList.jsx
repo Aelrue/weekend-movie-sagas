@@ -23,7 +23,7 @@ function DetailsList() {
       <img src={movie.poster} />
 
       <p>{movie.description}</p>
-      <div>
+      <div className="genres">
         <h2>Genre(s):</h2>
         {genre.map((genre) => {
           return <div key={genre.id}> {genre.name} </div>;

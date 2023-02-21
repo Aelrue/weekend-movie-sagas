@@ -4,3 +4,9 @@ div {
   color: lightgoldenrodyellow;
   font-size: large;
 }
+
+.genres {
+  height: 140px;
+  justify-content: center;
+  align-items: center;
+}
