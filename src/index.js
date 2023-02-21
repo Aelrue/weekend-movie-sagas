@@ -11,7 +11,6 @@ import createSagaMiddleware from "redux-saga";
 import { takeEvery, put } from "redux-saga/effects";
 import axios from "axios";
 
-// Create the rootSaga generator function
 // Fetch all necessary information: all movies, genres
 function* rootSaga() {
   yield takeEvery("FETCH_MOVIES", fetchAllMovies);

@@ -3,6 +3,8 @@ import "./App.css";
 import MovieList from "../MovieList/MovieList";
 import DetailsList from "../DetailsList/DetailsList";
 
+// router will render the content of the components of the routes
+// that have paths that matche the URLs
 function App() {
   return (
     <div className="App">
@@ -15,7 +17,6 @@ function App() {
         <Route path="/movie/:id" exact>
           <DetailsList />
         </Route>
-        {/* Add Movie page */}
       </Router>
     </div>
   );

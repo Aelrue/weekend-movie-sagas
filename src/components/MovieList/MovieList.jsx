@@ -8,20 +8,12 @@ function MovieList() {
   const movies = useSelector((store) => store.movies);
   const history = useHistory();
 
+  //useEffect runs after first render and after every update
   useEffect(() => {
     dispatch({ type: "FETCH_MOVIES" });
   }, []);
 
-  // const clickToDetails = (movieId) => {
-  //   console.log("clickToDetails clicked");
-  //   dispatch({
-  //     type: "SET_ID",
-  //     payload: movieId,
-  //   });
-  //   console.log("MOVIE ID:", movieId);
-  //   history.push(`/movie/${movieId}`);
-  // };
-
+  // dispatch will send actions to the redux store
   const clickToDetails = (movieId) => {
     console.log("clickToDetails clicked");
     dispatch({
@@ -36,6 +28,7 @@ function MovieList() {
     history.push(`/movie/${movieId}`);
   };
 
+  // will render details on the DOM
   return (
     <main>
       <h1>Now Playing</h1>

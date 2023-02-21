@@ -15,7 +15,7 @@ function DetailsList() {
     // console.log("Here's the ID", id);
     dispatch({ type: "FETCH_MOVIE_BY_ID", payload: { id } });
   }, []);
-
+  // render details on the DOM
   return (
     <>
       <h1>{movie.title}</h1>
