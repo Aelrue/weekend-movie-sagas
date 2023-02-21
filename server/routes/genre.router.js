@@ -23,22 +23,4 @@ router.get("/:id", (req, res) => {
     });
 });
 
-// router.get("/:id", (req, res) => {
-//   console.log("req.params.id:", req.params.id);
-//   let query = `SELECT “genres”.“name” FROM “movies”
-//   JOIN “movies_genres” ON “movies_genres”.“movie_id” = “movies”.“id”
-//   JOIN “genres” ON “genres”.“id” = “movies_genres”.“genre_id”
-//   WHERE “movies”.“id” = ${req.params.id};`;
-//   pool
-//     .query(query)
-//     .then((result) => {
-//       console.log(result.rows);
-//       res.send(result.rows);
-//     })
-//     .catch((err) => {
-//       console.log("ERROR: Get all genres", err);
-//       res.sendStatus(500);
-//     });
-// });
-
 module.exports = router;

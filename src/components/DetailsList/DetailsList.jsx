@@ -8,7 +8,7 @@ function DetailsList() {
   const history = useHistory();
   const { id } = useParams();
   const movie = useSelector((store) => store.movieDetails);
-  const genre = useSelector((store) => store.movieDetails);
+  const genre = useSelector((store) => store.genres);
 
   // get details about exact movie
   useEffect(() => {
@@ -19,11 +19,15 @@ function DetailsList() {
   return (
     <>
       <h1>{movie.title}</h1>
-      <div>
-        <img src={movie.poster} />
 
-        <p>{movie.description}</p>
-        <p>{movie.genre}</p>
+      <img src={movie.poster} />
+
+      <p>{movie.description}</p>
+      <div>
+        <h2>Genre(s):</h2>
+        {genre.map((genre) => {
+          return <div key={genre.id}> {genre.name} </div>;
+        })}
       </div>
 
       <button onClick={() => history.push("/")}>Back to Movies</button>
